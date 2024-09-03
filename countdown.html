@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down</title>
+    <link rel="stylesheet" href="css/all.min.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        /* background-color: #2980b9; */
+    }
+
+    .counter-content {
+        width: 400px;
+        height: 300px;
+        background-color: #ebeff2;
+        border: 5px #000 solid;
+    }
+
+    .content h1 {
+        font-size: 36px;
+        font-weight: 600;
+        text-align: center;
+        color: rgb(13, 13, 13);
+        padding: 10px;
+    }
+
+    .count {
+        padding: 30px;
+        font-size: 29px;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: rgb(24, 23, 23);
+    }
+
+    .buttons {
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+    }
+
+    .add {
+        padding: 10px;
+        margin: 15px;
+        background-color: green;
+        border: 5px #000 solid;
+        outline: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 5px;
+    }
+
+    .subtract {
+        padding: 10px;
+        margin-left: 15px;
+        background-color: orangered;
+        border: 5px #000 solid;
+        outline: none;
+        color: white;
+        font-weight: 600;
+        border-radius: 5px;
+    }
+
+    .reset {
+        padding: 10px;
+        border: none;
+        outline: none;
+        font-weight: 600;
+        border: 5px #000 solid;
+        border-radius: 5px;
+    }
+    .body{
+        background-color: #534f4f;
+    }
+</style>
+
+<body class="body">
+
+    <section class="container">
+        <div class="counter-content">
+            <div class="content">
+                <h1>Counter App</h1>
+                <hr />
+                <span id="count" class="count">0</span>
+                <hr />
+            </div>
+            <div class="buttons">
+                <button onclick="add()" class="add">Add    <i class="fa-solid fa-angles-up"></i></button>
+                <button onclick="reset()" class="reset">Reset</button>
+                <button onclick="subtract()" class="subtract">Subtract    <i class="fa-solid fa-angles-down"></i></button>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+    let count=0;
+    const val=document.getElementById('count');
+
+    const add=() =>{
+        count++;
+        val.textContent=count;
+    };
+
+    const reset=() =>{
+        count=0;
+        val.textContent=count;
+    };
+
+    const subtract=() =>{
+        count--;
+        val.textContent=count;
+    };
+    </script>
+</body>
+
+</html>
